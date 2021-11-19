@@ -448,6 +448,7 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    kernel/xiaomi/sdm845 \
     hardware/qcom/display \
     hardware/qcom/media \
     vendor/qcom/opensource/audio-hal/primary-hal

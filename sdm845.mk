@@ -90,6 +90,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor \
     vendor.qti.hardware.servicetracker@1.1.vendor
 
+# ANT+
+PRODUCT_PACKAGES += \
+    antradio_app \
+    libantradio
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl:32 \
@@ -131,12 +136,15 @@ PRODUCT_PACKAGES += \
     libbthost_if \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
+# QTI Bluetooth
+include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-commonsys-intf-board.mk
+$(call inherit-product, vendor/qcom/opensource/commonsys-intf/bluetooth/bt-system-opensource-product.mk)
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl:32 \
     android.hardware.camera.provider@2.4-service \
     libdng_sdk.vendor \
-    Snap \
     vendor.qti.hardware.camera.device@1.0.vendor
 
 # Charger
@@ -440,6 +448,9 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+    hardware/qcom/display \
+    hardware/qcom/media \
+    vendor/qcom/opensource/audio-hal/primary-hal
 
 # Telephony
 PRODUCT_PACKAGES += \

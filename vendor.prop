@@ -175,3 +175,5 @@ vendor.usb.use_ffs_mtp=0
 # Chipset
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SDM845
+
+persist.sys.binary_xml=false
